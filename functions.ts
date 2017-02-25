@@ -1,9 +1,6 @@
-function greet(firstName : string, lastName? : string) : void {
-    let msg = `Hello ${firstName}`;
-    if(lastName) {
-        msg = `${msg} ${lastName}`;
-    }
-    console.log(msg);
+function greet(firstName : string, lastName : string = "Lerma") : void {
+    
+    console.log(`Hello ${firstName} ${lastName}`);
 }
 
 greet("Cesar");
