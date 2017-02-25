@@ -1,4 +1,8 @@
 function greet(firstName, lastName) {
-    console.log("Hello " + firstName + " " + lastName);
+    var msg = "Hello " + firstName;
+    if (lastName) {
+        msg = msg + " " + lastName;
+    }
+    console.log(msg);
 }
-greet("Cesar", "Lopez");
+greet("Cesar");
