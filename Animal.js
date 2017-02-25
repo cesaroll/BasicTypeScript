@@ -13,19 +13,19 @@ var Animal = (function () {
         this.name = name;
     }
     Animal.prototype.walk = function (distance) {
-        console.log("Hi my name is " + this.name + " and I am walking " + distance + " meters.");
+        console.log("Hi my name is " + this.name);
     };
     return Animal;
 }());
-var myAnimal = new Animal("Rocky");
-myAnimal.walk(10);
+//let myAnimal = new Animal("Rocky"); Abstract class cannot be instantiated
 var Snake = (function (_super) {
     __extends(Snake, _super);
     function Snake() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Snake.prototype.walk = function (distance) {
-        console.log("Hi my name is " + this.name + ". Snakes don't really walk.");
+        _super.prototype.walk.call(this, distance);
+        console.log("Snakes don't really walk.");
     };
     return Snake;
 }(Animal));

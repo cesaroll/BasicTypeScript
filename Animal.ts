@@ -1,4 +1,4 @@
-class Animal {
+abstract class Animal {
 
     protected name: string; // Default is public. It can be private/protected/public.
 
@@ -7,18 +7,17 @@ class Animal {
     }
 
     walk (distance: number) {
-        console.log(`Hi my name is ${this.name} and I am walking ${distance} meters.`);
+        console.log(`Hi my name is ${this.name}`);
     }
 }
 
-let myAnimal = new Animal("Rocky");
+//let myAnimal = new Animal("Rocky"); Abstract class cannot be instantiated
 
-myAnimal.walk(10);
-
-class Snake extends Animal {
+class Snake extends Animal { // Abstract class can be extended
 
     walk (distance: number) {
-        console.log(`Hi my name is ${this.name}. Snakes don't really walk.`);
+        super.walk(distance);
+        console.log(`Snakes don't really walk.`);
     }
 
 }
